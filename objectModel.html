@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="objectModel.html" name="f1">
+        <input type="text" name="t1"><br>
+        <input type="text" name="t2"><br>
+        <input type="button" name="b1" value="按鈕"><br>
+        <input type="button" name="b2" onclick="fun()" value="click me">
+    </form>
+    <script>
+        function fun() {
+            alert(document.f1.t1.value + "\n" +
+            document.f1.t2.value + "\n" +
+            document.f1.b1.value);
+        }
+    </script>
+</body>
+</html>
