@@ -12,6 +12,23 @@
 ### Where does JavaScript run?
 > Originally designed to run in **BROWSERS**
 ##### (v.s php run on server)
+##### JavaScript Engine
+- Firefox: Spider Monkey
+- Chrome: V8
+> In 2009, Ryan Dahl took the open-source JavaScript engine in CHrome and embbedded it inside a C++ program. He called that program "Node".
+> "Node" is a C++ program that includes Google V8. As a result of that, we can run JavaScript outside a browser. Thus we can build the backend for web/ mobile app in JavaScript.
+
+### JavaScript v.s ECMAScript
+- ECMAScript: A specification, defining standards
+- JavaScript: A programming language
+
+### Write JavaScript on Chrome
+1. Open a new tab, click on right then choose "inspect"
+2. Choose "console", and now you can write JavaScript code
+3. You can change the JavaScript code in your HTML page, but it won't change the file.
+
+### Best place to put JavaScript code is ```html <body> ``` tag
+### Separation of concerns: build a .js file 
 
 #### 布魯斯前端
 <https://www.youtube.com/watch?v=1pYtVwIAvhY&t=1647s>
