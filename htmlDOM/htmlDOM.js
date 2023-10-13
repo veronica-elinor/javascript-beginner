@@ -1,7 +1,8 @@
 // callback 回呼
 // callback function 事件觸發後要回來呼叫這個function
 // 每次是件觸發都匯往function裡面傳入一個event物件
-window.addEventListener('load', function (params) { // 當網頁載入完成的監聽器
+// addEventListener('觸發事件', 執行的function) -> 對元素裝上一個事件的監聽器
+window.addEventListener('load', function (params) { // 當網頁載入完成的監聽器，'load'頁面載入完成
     //console.log('load')
     const p1 = document.getElementById('title') // 抓HTML元素的id
     console.log(p1)
