@@ -1,6 +1,5 @@
 # javascript-beginner
-> Programming with Mosh
-<https://www.youtube.com/watch?v=W6NZfCO5SIk>
+> Programming with Mosh <https://www.youtube.com/watch?v=W6NZfCO5SIk>
 
 ## Introduction to JavaScript
 ### What can JavaScript do?
@@ -31,8 +30,7 @@
 ### Separation of concerns: build a .js file 
 
 # 基本語法
-> 布魯斯前端
-<https://www.youtube.com/watch?v=1pYtVwIAvhY&t=1647s>
+> 布魯斯前端 <https://www.youtube.com/watch?v=1pYtVwIAvhY&t=1647s>
 
 ### console.log()
 > 在console中留下紀錄
@@ -47,8 +45,7 @@
 > 不可改
 
 # JavaScript箭頭函式(Arrow Function)
-> 彭彭的課程
-<https://www.youtube.com/watch?v=GzrWyJkD3b8>
+> 彭彭的課程 <https://www.youtube.com/watch?v=GzrWyJkD3b8>
 ## What's an arrow function?
 > 函式的一種變形
 ## The Core Of Function
@@ -102,8 +99,7 @@ let [函式名稱] = (param) => {
   let 函式名稱 = (函式參數列表) => (回傳值)
   ```
 # JavaScript Event Handling
-> 彭彭的課程
-<https://www.youtube.com/watch?v=7qjRxCPI7f8&list=PL-g0fdC5RMbqW54tWQPIVbhyl_Ky6a2VI&index=27>
+> 彭彭的課程 <https://www.youtube.com/watch?v=7qjRxCPI7f8&list=PL-g0fdC5RMbqW54tWQPIVbhyl_Ky6a2VI&index=27>
 ## 常見的事件種類
 - click 滑鼠點擊
 - mouseover 滑鼠移入
@@ -111,8 +107,7 @@ let [函式名稱] = (param) => {
 - mousedown 滑鼠按住
 - mouseup 滑鼠放開
 # AJAX / XHR
-> 彭彭的課程
-<https://www.youtube.com/watch?v=6X8sDGFGRss>
+> 彭彭的課程 <https://www.youtube.com/watch?v=6X8sDGFGRss>
 ## What's AJAX?
 #### 利用JavaScript程式進行網路連線，近年JavaScript提供fetch函式來執行網路連線完成address技術
 ## 使用JavaScript內建fetch函式
@@ -146,4 +141,90 @@ fetch(網址)then.(function(回應物件){
   });
   ```
 ## 操作範例
-> 見 </ajax_xhr.html>
+```htmlmixed
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript: AJAX網路連線實務</title>
+</head>
+<body>
+    <h3>AJAX / XHR 網路連線實務</h3>
+    <button onclick="getData();">取得資料</button>
+    <div id="result"></div>
+    <script>
+        /*
+            測試用網址:
+            https://cwpeng.github.io/live-records-samples/data/products.json
+        */
+       function getData(){
+            // 利用 fetch 進行連線並取得資料
+            fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
+                // console.log(response);
+                return response.json();
+            }).then(function(data){
+                // 將已取得的資料呈現到畫面
+                let result = document.querySelector("#result");
+                result.innerHTML = ""; // 先把畫面清空
+                for(let i=0; i<data.length; i++){
+                    let product = data[i];
+                    result.innerHTML += "<div>"+product.name+product.price+","+product.description+"<div>"; // +=串接 =會整個覆蓋
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+```
+## `.txt`讀取範例
+> W3C School <https://www.w3schools.com/js/js_ajax_intro.asp>
+### 有一`.txt`純文字檔
+```htmlembedded
+<h1>AJAX</h1>
+<p>AJAX is not a programming language.</p>
+<p>AJAX is a technique for accessing web servers from a web page.</p>
+<p>AJAX stands for Asynchronous JavaScript And XML.</p>
+```
+### HTML
+```htmlmixed
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+    function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("demo").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+    }
+</script>
+
+<script>
+    function showCustomer(str) {
+        var xhttp;
+        if (str == "") {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "getcustomer.php?q="+str, true);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>
+```
